@@ -1,7 +1,10 @@
 :root{
   height: 100%;
+}
+*{
   margin: 0;
   padding: 0;
-  background-color: #28668A;
-  background: radial-gradient(at left top, #28668A, #D5D5D5) no-repeat;
+}
+body{
+  height: 100%;
 }

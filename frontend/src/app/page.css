@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 main{
+    box-sizing: border-box;
+    height: 90%;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 15%;
-    margin-left: 10%;
+    padding-top: 15vh;
+    padding-left: 10vw;
 }
 
 main h1{
     animation: 1s ease-out 0s 1 slidefrombottom;
     transform: translateY(-70%);
+    font-size: min(8vw, 52px);
 }
 
 @keyframes slidefrombottom{
@@ -22,11 +25,15 @@ main h1{
     }
 }
 
-h3{
-    margin-right: 10vw;
-    margin-left: auto;
-    width: 5vw;
-    color: white;
-    margin-top: 4vh;
+header{
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15%;
+    align-items: center;
 }
-  
+
+a{
+    text-decoration: none;
+    color: black;
+}

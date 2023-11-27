@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <>
       <header>
-        <Link href='/blog'>
-        <h3>Blog</h3>
+        <Link className='blog' href='/blog'>
+          <h3>Blog</h3>
         </Link>
       </header>
       <main>
