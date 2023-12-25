@@ -1,6 +1,18 @@
 'use client';
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import "./page.css"
+
 export default function Blog(){
+    const [auth, setAuth] = useState(false);
+    const searchParams = useSearchParams()
+    const key = searchParams.get('secretkey')
+    useEffect(()=>{
+        if(key == "hello"){
+            setAuth(true);
+        }
+    }, [])
+    
     const handleSubmit = async(event)=> {
         const link = "http://localhost:5000";
         event.preventDefault();
@@ -14,20 +26,19 @@ export default function Blog(){
         }catch{
             console.log("failed");
         }
-        
     }
     return(
-        <>
-            <h1>This is a motherfucking blog</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <input name="heading" type="text"/>
-                </label>
-                <label>
-                    <input name="content" type="text"/>
-                </label>
-                <button id="btn" type="submit">Submit</button>
-            </form>
-        </>
+        !auth ?
+        <h1>This is a motherfucking blog</h1>
+        :
+        <form onSubmit={handleSubmit}>
+            <label>
+                <input name="heading" type="text"/>
+            </label>
+            <label>
+                <input name="content" type="text"/>
+            </label>
+            <button id="btn" type="submit">Submit</button>
+        </form>
     )
 }
