@@ -24,7 +24,7 @@ async function main() {
 
 app.get('/', async (req, res)=>{
   const blogs = await Blog.find({});
-  console.log(blogs);
+  res.send(blogs);
 });
 
 app.post('/', upload.none(), (req, res)=>{
