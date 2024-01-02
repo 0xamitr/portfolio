@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import "./page.css"
+import Link from 'next/link'
 
 export default function Blog(){
     const link = "http://localhost:5000";
@@ -13,7 +14,6 @@ export default function Blog(){
         try{
             const response = await fetch(link, {method: 'GET'});
             const body = await response.json();
-            console.log(body);
             setData(body);
         }catch{
             console.log("can't catch");
@@ -34,7 +34,6 @@ export default function Blog(){
                 method: 'POST',
                 body: formData,
             })
-            console.log(response);
         }catch{
             console.log("failed");
         }
@@ -42,15 +41,16 @@ export default function Blog(){
     
     return(
         !auth ?
-        <>
+        <div className='blog-container'>
             {data.map(e => {
-                return <div className='hello'>
-                    <h1>{e.heading}</h1>
-                    <p>{e.content}</p>
-                </div>
+                return( 
+                    <Link href="/blog/abd" className='hello'>
+                        <h1>{e.heading}</h1>
+                        <p>{e.content}</p>
+                    </Link>
+                )
             })}
-               
-        </>
+        </div>
         :
         <form onSubmit={handleSubmit}>
             <label>

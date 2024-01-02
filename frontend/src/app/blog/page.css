@@ -1,0 +1,11 @@
+.hello{
+    display:inline-block;
+    width: 40vw;
+    border: 2px solid black;
+}
+
+.blog-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
