@@ -5,7 +5,7 @@ import "./page.css"
 import Link from 'next/link'
 
 export default function Blog(){
-    const link = "http://localhost:5000";
+    const link = "http://localhost:5000/blog";
     const [auth, setAuth] = useState(false);
     const searchParams = useSearchParams()
     const key = searchParams.get('secretkey')
@@ -28,10 +28,15 @@ export default function Blog(){
     
     const handleSubmit = async(event)=> {
         event.preventDefault();
-        const formData = new FormData(event.target)
+        let formData = new FormData(event.target)
+        formData = JSON.stringify(Object.fromEntries(formData));
+        console.log((formData))
         try{
             const response = await fetch(link, {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: formData,
             })
         }catch{
@@ -44,7 +49,7 @@ export default function Blog(){
         <div className='blog-container'>
             {data.map(e => {
                 return( 
-                    <Link href="/blog/abd" className='hello'>
+                    <Link href={`/blog/${e.slug}`} className='hello'>
                         <h1>{e.heading}</h1>
                         <p>{e.content}</p>
                     </Link>
