@@ -30,7 +30,7 @@ export default function Blog(){
         event.preventDefault();
         let formData = new FormData(event.target)
         formData = JSON.stringify(Object.fromEntries(formData));
-        console.log((formData))
+        console.log((formData));
         try{
             const response = await fetch(link, {
                 method: 'POST',

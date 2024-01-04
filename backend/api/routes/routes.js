@@ -4,6 +4,11 @@ import Blog from "../models/model.js";
 
 router.get('/', async (req, res)=>{
   const blogs = await Blog.find({});
+  blogs.forEach(blog =>{
+    if(blog.content.length > 50){
+      blog.content = blog.content.slice(0,50) + "........";
+    }
+  })
   res.send(blogs);
 });
 
