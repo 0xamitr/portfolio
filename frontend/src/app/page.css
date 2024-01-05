@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 main{
     box-sizing: border-box;
-    height: 90%;
+    height: 80%;
     font-family: 'Montserrat', sans-serif;
     padding-top: 15vh;
     padding-left: 10vw;
 }
 
-main h1{
+.name{
     animation: 1s ease-out 0s 1 slidefrombottom;
     transform: translateY(-70%);
     font-size: min(8vw, 52px);
@@ -36,4 +36,8 @@ header{
 a{
     text-decoration: none;
     color: black;
+}
+
+footer{
+    height: 10%;
 }

@@ -1,9 +1,7 @@
-import "./page.css"
-
 export default function Footer(){
     return (
-        <>
-            BOoooo
-        </>
+        <footer>
+            <h2>booo</h2>
+        </footer>
     )
 }

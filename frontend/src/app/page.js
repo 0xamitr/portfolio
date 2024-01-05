@@ -3,7 +3,7 @@ import "./page.css"
 export default function Home() {
   return (
     <>
-        <h1>Hi, This is Amit</h1>
+        <h1 className="name">Hi, This is Amit</h1>
     </>
   )
 }
