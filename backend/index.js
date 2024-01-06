@@ -10,7 +10,7 @@ const app = express();
 mongoose.set("strictQuery", false);
 app.use(cors());
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://amitrathore.in"); // Allow access from all origins
+  res.header("Access-Control-Allow-Origin", "https://www.amitrathore.in"); // Allow access from all origins
   // You can also specify a specific origin: res.header("Access-Control-Allow-Origin", "https://yourdomain.com");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
