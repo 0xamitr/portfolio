@@ -21,6 +21,9 @@ async function main() {
   await mongoose.connect(mongoDB);
 };
 
+app.get('/', (req,res)=>{
+  res.send("IT WORKS");
+})
 app.listen(port, ()=>{
     console.log(`Server running on port ${port}`);
 });
