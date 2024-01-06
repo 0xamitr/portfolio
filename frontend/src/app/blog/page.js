@@ -5,14 +5,13 @@ import "./page.css"
 import Link from 'next/link'
 
 export default function Blog(){
-    const link = process.env.API_URL + "/blog";
+    const link = process.env.API_URL + "blog";
     const [auth, setAuth] = useState(false);
     const searchParams = useSearchParams()
     const key = searchParams.get('secretkey')
     const [data, setData] = useState([]);
     const getBlog = async()=> {
         try{
-            console.log(link)
             const response = await fetch(link, {method: 'GET', mode: 'no-cors'});
             const body = await response.json();
             setData(body);

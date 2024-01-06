@@ -4,7 +4,7 @@ import './page.css'
 
 export default function BlogPage({params}){
     const [data, setData] = useState([]);
-    const link = process.env.API_URL + `/blog/${params.slug}`;
+    const link = process.env.API_URL + `blog/${params.slug}`;
     const getBlog = async()=> {
         try{
             const response = await fetch(link, {method: 'GET', mode: 'no-cors'});
