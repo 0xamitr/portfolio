@@ -7,7 +7,7 @@ export default function BlogPage({params}){
     const link = process.env.API_URL + `/blog/${params.slug}`;
     const getBlog = async()=> {
         try{
-            const response = await fetch(link, {method: 'GET'});
+            const response = await fetch(link, {method: 'GET', mode: 'no-cors'});
             const body = await response.json();
             setData(body);
         }catch{

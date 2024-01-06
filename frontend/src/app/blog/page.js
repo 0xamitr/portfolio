@@ -13,7 +13,7 @@ export default function Blog(){
     const getBlog = async()=> {
         try{
             console.log(link)
-            const response = await fetch(link, {method: 'GET'});
+            const response = await fetch(link, {method: 'GET', mode: 'no-cors'});
             const body = await response.json();
             setData(body);
         }catch{
@@ -38,6 +38,7 @@ export default function Blog(){
         try{
             const response = await fetch(link, {
                 method: 'POST',
+                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
