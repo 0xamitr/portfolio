@@ -20,12 +20,15 @@ export default function Blog(){
             console.log("can't catch");
         }
     }
+    const funcauth = ()=>{
+        setAuth(true);
+    }
     useEffect(()=>{
         if(key == "hello"){
-            setAuth(true);
+            funcauth();
         }
         getBlog();
-    }, [])
+    });
     
     const handleSubmit = async(event)=> {
         event.preventDefault();
@@ -50,7 +53,7 @@ export default function Blog(){
         <div className='blog-container'>
             {data.map(e => {
                 return( 
-                    <Link href={`/blog/${e.slug}`} className='blog'>
+                    <Link key={e.slug} href={`/blog/${e.slug}`} className='blog'>
                         <h1>{e.heading}</h1>
                         <p>{e.content}</p>
                     </Link>

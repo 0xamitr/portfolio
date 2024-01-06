@@ -16,7 +16,7 @@ export default function BlogPage({params}){
     }
     useEffect(()=>{
         getBlog();
-    }, [])
+    })
 
     return(
         <div className="blog-content">
