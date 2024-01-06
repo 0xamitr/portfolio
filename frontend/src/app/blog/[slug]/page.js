@@ -1,5 +1,6 @@
-'use client'
+'use client';
 import { useEffect, useState } from "react"
+import './page.css'
 
 export default function BlogPage({params}){
     const [data, setData] = useState([]);
@@ -16,10 +17,11 @@ export default function BlogPage({params}){
     useEffect(()=>{
         getBlog();
     }, [])
+
     return(
-        <div>
+        <div className="blog-content">
             <h1>{data.heading}</h1>
-            <p>{data.content}</p>
+            <p className="content">{data.content}</p>
         </div>
     )
 }

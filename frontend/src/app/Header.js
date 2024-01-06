@@ -4,7 +4,7 @@ import "./page.css"
 export default function Header(){
     return (
         <header>
-            <Link className='blog' href='/blog'>
+            <Link href='/blog'>
                 <h3>Blog</h3>
             </Link>
         </header>

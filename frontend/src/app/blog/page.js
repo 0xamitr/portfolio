@@ -49,7 +49,7 @@ export default function Blog(){
         <div className='blog-container'>
             {data.map(e => {
                 return( 
-                    <Link href={`/blog/${e.slug}`} className='hello'>
+                    <Link href={`/blog/${e.slug}`} className='blog'>
                         <h1>{e.heading}</h1>
                         <p>{e.content}</p>
                     </Link>
@@ -57,12 +57,12 @@ export default function Blog(){
             })}
         </div>
         :
-        <form onSubmit={handleSubmit}>
+        <form id="form" onSubmit={handleSubmit}>
             <label>
-                <input name="heading" type="text"/>
+                <input name="heading" type="text" required/>
             </label>
             <label>
-                <input name="content" type="text"/>
+                <textarea name="content" type="text" required/>
             </label>
             <button id="btn" type="submit">Submit</button>
         </form>

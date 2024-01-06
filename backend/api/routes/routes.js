@@ -6,18 +6,16 @@ router.get('/', async (req, res)=>{
   const blogs = await Blog.find({});
   blogs.forEach(blog =>{
     if(blog.content.length > 50){
-      blog.content = blog.content.slice(0,50) + "........";
+      const someText= blog.content.slice(0,50) + "........";
+      blog.content = someText.replace(/(\r\n|\n|\r)/gm, "");
     }
   })
   res.send(blogs);
 });
 
 router.post('/', async (req, res)=>{
-  let temp = req.body.heading;
-  if(temp.length > 10){
-    temp = temp.slice(0, 10);
-  }
-  const slug = temp.toLowerCase().split(' ').join('-');
+  const slug = req.body.heading.replace(/[^a-zA-Z0-9\s]/g, '').toLowerCase().replace(/\s+/g, '-').substring(0, 40);
+  console.log(slug);
   const blog = new Blog({
     heading: req.body.heading,
     content: req.body.content,

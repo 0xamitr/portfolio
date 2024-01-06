@@ -1,0 +1,12 @@
+.blog-content{
+    padding-left: 25vw;
+    padding-right: 25vw;
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
+
+.content{
+    white-space: pre-wrap;
+}
