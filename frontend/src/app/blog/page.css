@@ -10,9 +10,8 @@
 }
 
 .blog:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: transform .4s ease-in-out;
-    background-color: lightgrey;
 }
 .blog:not(:hover){
     transition: transform .4s ease-in-out;

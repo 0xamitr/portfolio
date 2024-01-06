@@ -1,0 +1,19 @@
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10vh;
+}
+
+.project-container{
+    display: flex;
+    gap: 5vw;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project{
+    border: solid 1px black;
+    height: 450px;
+    width: 300px;
+}
