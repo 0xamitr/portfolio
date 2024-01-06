@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/blog', router);
 const mongoDB = process.env.MONGODB_URI;
-a
+
 main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
