@@ -5,7 +5,7 @@ import cors from 'cors';
 import router from './api/routes/routes.js'
  
 dotenv.config();
-const port = 5000;
+const port = 3000;
 const app = express();
 mongoose.set("strictQuery", false);
 
@@ -24,6 +24,7 @@ async function main() {
 app.get('/', (req,res)=>{
   res.send("IT WORKS");
 })
-app.listen(port, ()=>{
-    console.log(`Server running on port ${port}`);
+
+app.listen(port, "0.0.0.0", function () {
+  console.log(`Server running on port ${port}`);
 });
