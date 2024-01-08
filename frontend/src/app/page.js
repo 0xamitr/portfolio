@@ -7,7 +7,7 @@ export default function Home() {
       <div className="front">
         <h1 className="name">Hi, This is Amit</h1>
       </div>
-        <Projects/>
+      <Projects/>
     </>
   )
 }

@@ -2,18 +2,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10vh;
+    gap: 20vh;
 }
 
 .project-container{
-    display: flex;
-    gap: 5vw;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    height: 450px;
 }
 
 .project{
+    position: absolute;
     border: solid 1px black;
-    height: 450px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s  ease-in-out;
+    border-radius: 100%;
+}
+
+.project1{
+    left: 25%;
+}
+.project1, .project2, .project3{
+    border-radius: 5px;
+    transform: translateX(-50%) scale(1.5);
+}
+.project3{
+    left: 75%;
+
 }
