@@ -1,0 +1,10 @@
+.project-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.projects{
+    border-left: solid 3px grey;
+    padding-left: 2vw;
+    line-height: 3;
+}

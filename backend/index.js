@@ -11,7 +11,7 @@ const app = express();
 mongoose.set("strictQuery", false);
 
 app.use(cors({
-  origin: 'https://www.amitrathore.in'
+  origin: ['https://www.amitrathore.in', /^http:\/\/localhost:(\d+)$/],
 }));
 
 app.use(bodyParser.json()); 

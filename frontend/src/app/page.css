@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 main{
     box-sizing: border-box;
-    min-height: 80%;
+    height: 80vh;
     font-family: 'Montserrat', sans-serif;
 }
 
 p{
     line-height: 1.5em;
 }
+
 .name{
-    position: absolute;
-    top: 35%;
-    left: 10%;
     animation: 1s ease-out 0s 1 slidefrombottom;
-    transform: translateY(-70%);
+    transform: translateY(-40px);
     font-size: min(8vw, 52px);
+    margin-top: 5vw;
 }
 
 @keyframes slidefrombottom{
@@ -22,15 +22,14 @@ p{
         transform: translateY(0);
         opacity: 0;
     }
-
     100%{
-        transform: translateY(-70%);
+        transform: translateY(-40px);
         opacity: 1;
     }
 }
 
 header{
-    height: 10%;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     margin-right: 15%;
@@ -44,9 +43,14 @@ a{
 }
 
 footer{
-    height: 10%;
+    height: 10vh;
 }
 
-.front{
-    height: 90vh;
+#div-whatever{
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 16vw;
+    margin-right: 28vw;
+    align-items: center;
 }
