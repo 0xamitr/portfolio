@@ -10,7 +10,9 @@ const port = process.env.PORT || 3000;
 const app = express();
 mongoose.set("strictQuery", false);
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://www.amitrathore.in'
+}));
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
